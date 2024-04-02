@@ -1,0 +1,19 @@
+<xml>
+    <set name="GLM" value="${LINC_GLM_PATH}/lib/"/>
+
+    <files id="haxe">
+        <compilervalue name="-I" value="${LINC_GLM_PATH}/lib/"/>
+    </files>
+
+    <files id='glm'>
+        <compilervalue name="-I" value="{GLM}detail/"/>
+        <compilervalue name="-I" value="{GLM}ext/"/>
+        <compilervalue name="-I" value="{GLM}gtc/"/>
+        <compilervalue name="-I" value="{GLM}gtx/"/>
+        <compilervalue name="-I" value="{GLM}simd/"/>
+    </files>
+
+    <target id="haxe">
+        <files id="glm" />
+    </target>
+</xml>
