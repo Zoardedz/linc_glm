@@ -23,10 +23,15 @@ class GLM {
     public static function translate(mat:Mat4, directionAndMagnitude:Vec3):Mat4 {
         return new Mat4(Pointer.addressOf(NativeGLMFunc.translate(mat.underlying, directionAndMagnitude.underlying)));
     }
+
+    public static function perspective(fov:cpp.Float32, aspectRatio:cpp.Float32, nearView:cpp.Float32, farView:cpp.Float32):Mat4 {
+        return new Mat4(Pointer.addressOf(NativeGLMFunc.perspective(fov * Math.PI / 180, aspectRatio, nearView, farView)));
+    }
 }   
 
 @:include('glm.hpp')
 @:include('gtc/matrix_transform.hpp')
+@:include('gtx/matrix_clip_space.hpp')
 @:unreflective
 @:keep
 //not a native class in general
@@ -39,4 +44,7 @@ extern class NativeGLMFunc {
 
     @:native('glm::translate')
     static function translate(mat:NativeMatrix4x4, vec:NativeVec3):NativeMatrix4x4;
+
+    @:native('glm::perspective')
+    static function perspective(fov:cpp.Float32, aspectRatio:cpp.Float32, nearViewPlane:cpp.Float32, farViewPlane:cpp.Float32):NativeMatrix4x4;
 }
