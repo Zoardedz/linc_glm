@@ -1,0 +1,11 @@
+{
+	"name": "linc_glm",
+	"url" : "https://github.com/Zoardedz/linc_glm",
+	"license": "MIT",
+	"tags": ["cpp"],
+	"description": "linc_glm is an open source binding of the opengl math library",
+	"version": "0.0.1",
+	"releasenote": "",
+	"contributors": ["Ziad"],
+	"dependencies": {}
+}
