@@ -9,15 +9,31 @@ class Vec3 {
 
     public var x(get, set):F32;
     public function get_x():F32 return underlying.x;
-    public function set_x(n:F32):F32 return underlying.x = n;
+    public function set_x(n:F32):F32 { 
+        underlying.x = n;
+        xSet();
+        return underlying.x; 
+    }
 
     public var y(get, set):F32;
     public function get_y():F32 return underlying.y;
-    public function set_y(n:F32):F32 return underlying.y = n;
+    public function set_y(n:F32):F32 { 
+        underlying.y = n;
+        ySet();
+        return underlying.y; 
+    }
 
     public var z(get, set):F32;
     public function get_z():F32 return underlying.z;
-    public function set_z(n:F32):F32 return underlying.z = n;
+    public function set_z(n:F32):F32 { 
+        underlying.z = n;
+        zSet();
+        return underlying.z; 
+    }
+
+    public dynamic function xSet():Void {}
+    public dynamic function ySet():Void {}
+    public dynamic function zSet():Void {}
 
     public function new(x:F32 = 0.0, y:F32 = 0.0, z:F32 = 0.0, ?underlying:cpp.Pointer<NativeVec3> = null)
         underlying != null ? this.underlying = untyped __cpp__('*{0}', underlying.ptr) : this.underlying = NativeVec3.vec3Init(x, y, z);
