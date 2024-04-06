@@ -31,7 +31,7 @@ class GLM {
 
 @:include('glm.hpp')
 @:include('gtc/matrix_transform.hpp')
-@:include('gtx/matrix_clip_space.hpp')
+@:include('ext/matrix_clip_space.hpp')
 @:unreflective
 @:keep
 //not a native class in general
