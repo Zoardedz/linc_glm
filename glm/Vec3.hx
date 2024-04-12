@@ -61,6 +61,10 @@ class Vec3 {
         z -= vec3.z;
     }
 
+    public inline function plus(rhs:Vec3):Vec3 {
+        return new Vec3(x + rhs.x, y + rhs.y, z + rhs.z);
+    }
+
     //vec2 - vec1
     public static inline function difference(vec1:Vec3, vec2:Vec3):Vec3 
     {
