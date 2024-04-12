@@ -18,8 +18,8 @@ class UnitTest {
                                  0, 1, 0, 0,
                                  0, 0, 1, 0,
                                  0, 0, 0, 1);
-        mat.multiplyByMat4(mat2);
-
+        mat *= mat2;
+        
         untyped __cpp__('std::cout << glm::to_string(*{0}) << std::endl', mat);
 
         var vec3:Vec3 = new Vec3(1, 50, 30);

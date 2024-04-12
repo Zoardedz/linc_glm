@@ -17,7 +17,8 @@ abstract Mat4(Star<NativeMatrix4x4>) from Star<NativeMatrix4x4> to Star<NativeMa
         this = NativeMatrix4x4.ptrInit(C0R0, C1R0, C2R0, C3R0, C0R1, C1R1, C2R1, C3R1, C0R2, C1R2, C2R2, C3R2, C0R3, C1R3, C2R3, C3R3);
     }
 
-    public inline function multiplyByMat4(otherMatrix:Mat4) 
+    @:op(A *= B)
+    public inline function multiplyByMat4(otherMatrix:Mat4)
         untyped __cpp__('(*{0}) *= (*{1})', this, otherMatrix);
 
     public function valPtr():Star<F32> 
