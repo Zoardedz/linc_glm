@@ -39,22 +39,13 @@ class Vec3 {
 @:native('glm::vec3')
 extern class NativeVec3
 {
-	@:native('new glm::vec3')
-	static function heapInit(x:F32, y:F32, z:F32):Star<NativeVec3>;
 	@:native('glm::vec3')
 	static function vec3Init(x:F32, y:F32, z:F32):NativeVec3;
 	
 	@:native('x')
-	var xx:F32;
+	var x:F32;
 	@:native('y')
-	var yy:F32;
+	var y:F32;
 	@:native('z')
-	var zz:F32;
-
-	@:native('xSetCallback')
-	var xSet:Void->Void;
-	@:native('ySetCallback')
-	var ySet:Void->Void;
-	@:native('zSetCallback')
-	var zSet:Void->Void;
+	var z:F32;
 }
