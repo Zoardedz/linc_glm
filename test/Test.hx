@@ -23,6 +23,8 @@ class Test {
 
         var vec31:Vec3 = new Vec3(1, 10, 10);
         var vec32:Vec3 = new Vec3(1, 30, 20);
-        trace(Vec3.difference(vec31, vec32).toString());
+        trace(vec32.multiplyScalar(0.5).toString());
+        vec32.plusEqual(vec31);
+        trace(vec32.toString());
     }
 }

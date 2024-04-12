@@ -44,6 +44,23 @@ class Vec3 {
         this.z = otherNative.ptr.z;
     }
     
+    public inline function multiplyScalar(n:F32):Vec3 
+    {
+        return new Vec3(x * n, y * n, z * n);
+    }
+
+    public inline function plusEqual(vec3:Vec3):Void {
+        x += vec3.x;
+        y += vec3.y;
+        z += vec3.z;
+    }
+
+    public inline function minusEqual(vec3:Vec3):Void {
+        x -= vec3.x;
+        y -= vec3.y;
+        z -= vec3.z;
+    }
+
     //vec2 - vec1
     public static inline function difference(vec1:Vec3, vec2:Vec3):Vec3 
     {
