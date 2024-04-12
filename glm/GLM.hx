@@ -35,6 +35,10 @@ class GLM {
     public static function lookAt(position:Vec3, direction:Vec3, up:Vec3):Mat4 {
         return new Mat4(Pointer.addressOf(NativeGLMFunc.lookAt(position.underlying, direction.underlying, up.underlying)));
     }
+
+    public static function normalize(vector:Vec3):Vec3 {
+        return new Vec3(0, 0, 0, Pointer.addressOf(NativeGLMFunc.normalize(vector.underlying)));
+    }
 }   
 
 @:include('glm.hpp')
@@ -61,4 +65,7 @@ extern class NativeGLMFunc {
 
     @:native('glm::lookAt')
     static function lookAt(position:NativeVec3, direction:NativeVec3, upVector:NativeVec3):NativeMatrix4x4;
+
+    @:native('glm::normalize')
+    static function normalize(vec3:NativeVec3):NativeVec3;
 }
