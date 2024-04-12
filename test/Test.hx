@@ -2,6 +2,7 @@ package;
 
 import glm.Mat4;
 import glm.Vec4;
+import glm.Vec3;
 
 class Test {
     static function main() {
@@ -19,5 +20,9 @@ class Test {
         for( i in 0...4){
            trace( mat.getColumn(i).toString() );
         }
+
+        var vec31:Vec3 = new Vec3(1, 10, 10);
+        var vec32:Vec3 = new Vec3(1, 30, 20);
+        trace(Vec3.difference(vec31, vec32).toString());
     }
 }

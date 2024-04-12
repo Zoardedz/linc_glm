@@ -44,6 +44,18 @@ class Vec3 {
         this.z = otherNative.ptr.z;
     }
     
+    //vec2 - vec1
+    public static inline function difference(vec1:Vec3, vec2:Vec3):Vec3 
+    {
+        final ret:Vec3 = new Vec3();
+
+        ret.x = vec2.x - vec1.x;
+        ret.y = vec2.y - vec1.y;
+        ret.z = vec2.z - vec1.z;
+
+        return ret;
+    }
+    
     public inline function toString():String 
         return 'x: $x, y: $y, z: $z';
 }
