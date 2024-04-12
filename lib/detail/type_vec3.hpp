@@ -10,6 +10,8 @@
 #	include "_swizzle_func.hpp"
 #endif
 #include <cstddef>
+#include <functional>
+#include <iostream>
 
 namespace glm
 {
@@ -96,6 +98,11 @@ namespace glm
 
 		GLM_FUNC_DECL GLM_CONSTEXPR T & operator[](length_type i);
 		GLM_FUNC_DECL GLM_CONSTEXPR T const& operator[](length_type i) const;
+
+		// -- Custom Definitions --
+		std::function<void()> xSetCallback = [&]() {};
+		std::function<void()> ySetCallback = [&]() {};
+		std::function<void()> zSetCallback = [&]() {};
 
 		// -- Implicit basic constructors --
 

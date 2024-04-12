@@ -1,4 +1,6 @@
 --main Test.hx
+--debug
+--library hxcpp-debug
 -cpp cpp/
 -cp ../
 # pick a target
