@@ -27,6 +27,14 @@ class GLM {
     public static function perspective(fov:cpp.Float32, aspectRatio:cpp.Float32, nearView:cpp.Float32, farView:cpp.Float32):Mat4 {
         return new Mat4(Pointer.addressOf(NativeGLMFunc.perspective(fov * Math.PI / 180, aspectRatio, nearView, farView)));
     }
+
+    public static function cross(lhs:Vec3, rhs:Vec3):Vec3 {
+        return new Vec3(0, 0, 0, Pointer.addressOf(NativeGLMFunc.vectorCross(lhs.underlying, rhs.underlying)));
+    }
+
+    public static function lookAt(position:Vec3, direction:Vec3, up:Vec3):Mat4 {
+        return new Mat4(Pointer.addressOf(NativeGLMFunc.lookAt(position.underlying, direction.underlying, up.underlying)));
+    }
 }   
 
 @:include('glm.hpp')
@@ -47,4 +55,10 @@ extern class NativeGLMFunc {
 
     @:native('glm::perspective')
     static function perspective(fov:cpp.Float32, aspectRatio:cpp.Float32, nearViewPlane:cpp.Float32, farViewPlane:cpp.Float32):NativeMatrix4x4;
+
+    @:native('glm::cross')
+    static function vectorCross(lhs:NativeVec3, rhs:NativeVec3):NativeVec3;
+
+    @:native('glm::lookAt')
+    static function lookAt(position:NativeVec3, direction:NativeVec3, upVector:NativeVec3):NativeMatrix4x4;
 }
