@@ -9,11 +9,11 @@ import glm.Vec4;
 
 @:forward
 abstract Mat4(Star<NativeMatrix4x4>) from Star<NativeMatrix4x4> to Star<NativeMatrix4x4> {
-    public function new(C0R0:F32 = 1, C1R0:F32 = 0, C2R0:F32 = 0, C3R0:F32 = 0,
+    public function new(overrid:Star<NativeMatrix4x4> = null, C0R0:F32 = 1, C1R0:F32 = 0, C2R0:F32 = 0, C3R0:F32 = 0,
                         C0R1:F32 = 0, C1R1:F32 = 1, C2R1:F32 = 0, C3R1:F32 = 0,
                         C0R2:F32 = 0, C1R2:F32 = 0, C2R2:F32 = 1, C3R2:F32 = 0,
-                        C0R3:F32 = 0, C1R3:F32 = 0, C2R3:F32 = 0, C3R3:F32 = 1, overrid:Pointer<NativeMatrix4x4> = null) {
-         (overrid != null) ? this = overrid.ptr : 
+                        C0R3:F32 = 0, C1R3:F32 = 0, C2R3:F32 = 0, C3R3:F32 = 1) {
+         (overrid != null) ? this = overrid : 
         this = NativeMatrix4x4.ptrInit(C0R0, C1R0, C2R0, C3R0, C0R1, C1R1, C2R1, C3R1, C0R2, C1R2, C2R2, C3R2, C0R3, C1R3, C2R3, C3R3);
     }
 

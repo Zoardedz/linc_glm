@@ -15,19 +15,19 @@ using cpp.Native;
 #end
 class GLM {
     public static function rotate(matrix:Mat4, angleInRadians:cpp.Float32, vec3:Vec3):Mat4 {
-        return new Mat4(Pointer.addressOf(NativeGLMFunc.rotate(untyped __cpp__('*{0}', matrix), angleInRadians, untyped __cpp__('*{0}', vec3))));
+        return new Mat4(NativeGLMFunc.rotate(untyped __cpp__('*{0}', matrix), angleInRadians, untyped __cpp__('*{0}', vec3)).addressOf());
     }
 
     public static function scale(mat:Mat4, scale:Vec3):Mat4 {
-        return new Mat4(Pointer.addressOf(NativeGLMFunc.scale(untyped __cpp__('*{0}', mat), untyped __cpp__('*{0}', scale))));
+        return new Mat4(NativeGLMFunc.scale(untyped __cpp__('*{0}', mat), untyped __cpp__('*{0}', scale)).addressOf());
     }
 
     public static function translate(mat:Mat4, directionAndMagnitude:Vec3):Mat4 {
-        return new Mat4(Pointer.addressOf(NativeGLMFunc.translate(untyped __cpp__('*{0}', mat), untyped __cpp__('*{0}', directionAndMagnitude))));
+        return new Mat4(NativeGLMFunc.translate(untyped __cpp__('*{0}', mat), untyped __cpp__('*{0}', directionAndMagnitude)).addressOf());
     }
 
     public static function perspective(fov:cpp.Float32, aspectRatio:cpp.Float32, nearView:cpp.Float32, farView:cpp.Float32):Mat4 {
-        return new Mat4(Pointer.addressOf(NativeGLMFunc.perspective(fov * Math.PI / 180, aspectRatio, nearView, farView)));
+        return new Mat4(NativeGLMFunc.perspective(fov * Math.PI / 180, aspectRatio, nearView, farView).addressOf());
     }
 }   
 
